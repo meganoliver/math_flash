@@ -63,6 +63,7 @@ function response() {
 		feedback.innerHTML = 'Great Job!! Keep up the Good Work!!';
 		createCard();
 		answer.value = "";
+		answer.focus();
 	} else {
 		currentScore -= 1;
 		score.innerHTML = currentScore;
@@ -70,6 +71,7 @@ function response() {
 		feedback.innerHTML = '<span>Whoops! The correct answer to ' + topNum.innerText + symbol.innerHTML + bottomNum.innerText + ' is ' + correct +' . Keep going!</span>';
 		createCard();
 		answer.value = "";	
+		answer.focus();
 	}
 }
 
