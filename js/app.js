@@ -1,5 +1,6 @@
 'use strict';
 
+//variables
 const mainCard = document.getElementById('main-card');
 const topNum = document.getElementById('top-number');
 const bottomNum = document.getElementById('bottom-number');
@@ -146,7 +147,9 @@ formBtn.addEventListener('click', function() {
 	overlay.classList.add('hide');
 	answer.focus();
 	divideAnswer.focus();
-})
+	return;
+});
+
 
 gameBtn.addEventListener('click', function() {
 		if(symbol.innerText === "+") {
@@ -168,7 +171,7 @@ divideBtn.addEventListener('click', function() {
 function nextQuestion() {
 	const nextBtn = document.getElementById('next');
 	nextBtn.addEventListener('click', function() {
-		if(divideSymbol.innerText === '➗') {
+		if(divideCard.style.zIndex === '20') {
 			createDivideCard();
 			divideAnswer.value = "";
 			divideAnswer.focus();
@@ -180,7 +183,6 @@ function nextQuestion() {
 		feedback.innerHTML = "";
 		emoji.innerHTML = "";
 	});
-	
 }
 
 

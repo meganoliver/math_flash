@@ -12,7 +12,7 @@
 		<div id ="sign-in">
 			<h1 id="welcome">Welcome to Math Flash!</h1>
 			<h2 id="instructions">Please fill out the form below to get started.</h2>
-			<form id="sign-in-form" method="POST" action="flash.html">
+			<form id="sign-in-form">
 				<fieldset id="form-one">
 					<label for="name">Name:</label>
 					<input autofocus type="text" id="name" name="name" required>
@@ -32,7 +32,7 @@
 					<label for="division">Division</label>
 					<input class="radio" type="radio" id="division" name="operation"><br>
 
-					<button type="submit" id="form-submit">Let's Play!</button>
+					<button type="button" id="form-submit">Let's Play!</button>
 				</fieldset>
 			</form>
 		</div>
@@ -44,7 +44,7 @@
 		<main>
 			<div class="main-divs" id="emoji"></div>
 			
-			<div id="main-card" class=" main-divs main-hide">
+			<div id="main-card" class="main-divs hide">
 				<div class="top-card section">
 					<h1 id="top-number"></h1>
 				</div>
@@ -58,9 +58,7 @@
 				</div>
 			</div>
 			
-
-			
-			<div id="divide-card" class="divide-hide">
+			<div id="divide-card">
 				<div class="divide-sections">
 					<h1 id="dividend"></h1>
 					<h1 id="divide-symbol">➗</h1>
