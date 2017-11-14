@@ -15,7 +15,7 @@ main {
   justify-content: space-around;
   align-items: center; }
 
-.main-card {
+#main-card {
   background-color: #FFF;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@ main {
   text-align: center; }
 
 #bottom-number {
-  margin-left: 15px; }
+  margin-left: 25px; }
 
 #symbol {
   font-size: 3em;
@@ -144,14 +144,15 @@ form {
 
 #form-one {
   border: none;
-  padding: none; }
+  padding: none;
+  font-size: 1em; }
 
 #form-two {
   border: none;
   padding: none; }
 
 #name {
-  font-size: .5em;
+  font-size: 1em;
   font-family: "Henny Penny", cursive;
   text-align: center; }
 
@@ -166,5 +167,32 @@ input[type="radio"] {
   border-radius: 8px;
   font-size: 1em;
   margin-top: 20px; }
+
+#divide-card {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+  width: 300px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 50px auto 20px;
+  color: #000; }
+
+.divide-sections {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+#divide-submit {
+  margin: 30px auto;
+  border: 1px solid black;
+  background-color: #B3E9C7;
+  border-radius: 8px;
+  font-size: 3em;
+  font-family: "Henny Penny", cursive; }
 
 /*# sourceMappingURL=application.css.map */
