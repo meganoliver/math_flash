@@ -23,12 +23,14 @@ const feedback = document.getElementById('feedback');
 const form = document.getElementById('sign-in');
 const overlay = document.getElementById('overlay');
 const buttons = document.getElementsByTagName('button');
+const restartBtn = document.getElementById('restart');
 let correct;
 let operation;
 
 //use form data to create flash cards
 
 function createMainCard() {
+	gameBtn.disabled = false;
 	mainCard.style.zIndex = '20';
 	divideCard.style.zIndex = '-20';
 	let firstNum = Math.floor((Math.random() * 9) + 1);
@@ -45,9 +47,11 @@ function createMainCard() {
 		topNum.innerHTML = firstNum;
 		bottomNum.innerHTML = secondNum;
 	}
+	answer.focus();
 }
 
 function createDivideCard() {
+	divideBtn.disabled = false;
 	mainCard.style.zIndex = '-20';
 	divideCard.style.zIndex = '20';
 	let firstNum = Math.floor((Math.random() * 89) + 1);
@@ -63,6 +67,7 @@ function createDivideCard() {
 	if(parseInt(dividend.innerHTML) % parseInt(divisor.innerHTML) > 0) {
 		createDivideCard();
 	}
+	divideAnswer.focus();
 }
 
 //operation functions
@@ -83,6 +88,39 @@ function divide() {
 	correct = parseInt(dividend.innerText) / parseInt(divisor.innerText);
 }
 
+function nextQuestion() {
+	const nextBtn = document.getElementById('next');
+	nextBtn.addEventListener('click', function() {
+		if(divideCard.style.zIndex === '20') {
+			createDivideCard();
+			divideAnswer.value = "";
+			divideAnswer.focus();
+		} else {
+			createMainCard();
+			answer.value = "";
+			answer.focus();
+		}
+		feedback.innerHTML = "";
+		emoji.innerHTML = "";
+	});
+}
+
+function enterClick() {
+	answer.addEventListener("keyup", function() {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			gameBtn.click();
+		}
+	});
+	divideAnswer.addEventListener("keyup", function() {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			divideBtn.click();
+		}
+	});
+}
+enterClick();
+
 //create a response for after an attempt is made.
 
 function response() {
@@ -92,14 +130,14 @@ function response() {
 		score.innerHTML = currentScore;
 		emoji.innerHTML = '<img class="emoji" src="images/happy_emoji.png" alt="A happy emoji">';
 		feedback.innerHTML = 'Great Job!! Keep up the Good Work!!';
-		feedback.innerHTML += '<button id="next">Next Question!</button>';
+		feedback.innerHTML += '<button id="next" class="button">Next Question!</button>';
 		nextQuestion();
 	} else {
 		currentScore -= 1;
 		score.innerHTML = currentScore;
 		emoji.innerHTML = '<img class="emoji" src="images/sad_emoji.png" alt="A sad emoji">';
 		feedback.innerHTML = '<span>Whoops! The correct answer to ' + topNum.innerText + symbol.innerHTML + bottomNum.innerText + ' is ' + correct +' . Keep going!</span>';
-		feedback.innerHTML += '<button id="next">Next Question!</button>';
+		feedback.innerHTML += '<button id="next" class="button">Next Question!</button>';
 		nextQuestion();
 	}
 	
@@ -112,17 +150,18 @@ function divideResponse() {
 		score.innerHTML = currentScore;
 		emoji.innerHTML = '<img class="emoji" src="images/happy_emoji.png" alt="A happy emoji">';
 		feedback.innerHTML = 'Great Job!! Keep up the Good Work!!';
-		feedback.innerHTML += '<button id="next">Next Question!</button>';
+		feedback.innerHTML += '<button id="next" class="button">Next Question!</button>';
 		
 	} else {
 		currentScore -= 1;
 		score.innerHTML = currentScore;
 		emoji.innerHTML = '<img class="emoji" src="images/sad_emoji.png" alt="A sad emoji">';
 		feedback.innerHTML = '<span>Whoops! The correct answer to ' + dividend.innerText + ' ➗ ' + divisor.innerText + ' is ' + correct +' . Keep going!</span>';
-		feedback.innerHTML += '<button id="next">Next Question!</button>';
+		feedback.innerHTML += '<button id="next" class="button">Next Question!</button>';
 	}
 	nextQuestion();
 }
+
 
 //Button listeners
 
@@ -152,38 +191,34 @@ formBtn.addEventListener('click', function() {
 
 
 gameBtn.addEventListener('click', function() {
-		if(symbol.innerText === "+") {
-			add();
-		} else if(symbol.innerText === "-") {
-			subtract();
-		} else if(symbol.innerText === "X") {
-			multiply();
-		} 
-		response();	
+	gameBtn.disabled = true;
+	if(symbol.innerText === "+") {
+		add();
+	} else if(symbol.innerText === "-") {
+		subtract();
+	} else if(symbol.innerText === "X") {
+		multiply();
+	} 
+	response();	
 });
 
 
 divideBtn.addEventListener('click', function() {
+	divideBtn.disabled = true;
 	divide();
 	divideResponse();
 });
 
-function nextQuestion() {
-	const nextBtn = document.getElementById('next');
-	nextBtn.addEventListener('click', function() {
-		if(divideCard.style.zIndex === '20') {
-			createDivideCard();
-			divideAnswer.value = "";
-			divideAnswer.focus();
-		} else {
-			createMainCard();
-			answer.value = "";
-			answer.focus();
-		}
-		feedback.innerHTML = "";
-		emoji.innerHTML = "";
-	});
-}
+restartBtn.addEventListener('click', function() {
+	mainCard.style.zIndex = '-20';
+	divideCard.style.zIndex = '-20';
+	feedback.innerHTML = "";
+	emoji.innerHTML = "";
+	currentScore = 0;
+	nameInput.value = name.innerText;
+	form.classList.remove('hide');
+	overlay.classList.remove('hide');
+});
 
 
 

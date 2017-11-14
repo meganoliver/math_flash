@@ -15,6 +15,14 @@ main {
   justify-content: space-around;
   align-items: center; }
 
+.button {
+  margin: 30px auto;
+  border: 1px solid black;
+  background-color: #B3E9C7;
+  border-radius: 8px;
+  font-size: 3em;
+  font-family: "Henny Penny", cursive; }
+
 #main-card {
   background-color: #FFF;
   display: flex;
@@ -67,14 +75,6 @@ main {
   align-items: center;
   border-bottom: 2px solid #000; }
 
-#submit {
-  margin: 30px auto;
-  border: 1px solid black;
-  background-color: #B3E9C7;
-  border-radius: 8px;
-  font-size: 3em;
-  font-family: "Henny Penny", cursive; }
-
 header {
   width: 100%;
   height: 100px;
@@ -83,6 +83,11 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #B3E9C7; }
+
+#restart {
+  background-color: #5603AD;
+  font-size: 1em;
+  color: #FFF; }
 
 .head-div {
   display: flex;
@@ -120,12 +125,7 @@ header {
   color: #FFF; }
 
 #next {
-  margin: 30px auto;
-  border: 1px solid black;
-  background-color: #B3E9C7;
-  border-radius: 8px;
-  font-size: 1em;
-  font-family: "Henny Penny", cursive; }
+  font-size: 1em; }
 
 #overlay {
   position: absolute;
@@ -180,12 +180,9 @@ input[type="radio"] {
   height: 30px; }
 
 #form-submit {
-  font-family: "Henny Penny", cursive;
   background-color: #5603AD;
   color: #FFF;
-  border-radius: 8px;
-  font-size: 1em;
-  margin-top: 20px; }
+  font-size: 1em; }
 
 #divide-card {
   background-color: #FFF;
@@ -201,7 +198,8 @@ input[type="radio"] {
   color: #000;
   position: absolute;
   left: 29%;
-  top: 25%; }
+  top: 25%;
+  z-index: -20; }
 
 .divide-sections {
   display: flex;
@@ -216,13 +214,5 @@ input[type="radio"] {
   font-family: "Henny Penny", cursive;
   width: 120px;
   text-align: center; }
-
-#divide-submit {
-  margin: 30px auto;
-  border: 1px solid black;
-  background-color: #B3E9C7;
-  border-radius: 8px;
-  font-size: 3em;
-  font-family: "Henny Penny", cursive; }
 
 /*# sourceMappingURL=application.css.map */
