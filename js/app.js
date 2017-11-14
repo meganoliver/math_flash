@@ -130,35 +130,15 @@ function response() {
 		score.innerHTML = currentScore;
 		emoji.innerHTML = '<img class="emoji" src="images/happy_emoji.png" alt="A happy emoji">';
 		feedback.innerHTML = 'Great Job!! Keep up the Good Work!!';
-<<<<<<< HEAD
-<<<<<<< HEAD
-		createCard();
-		answer.value = "";
-		answer.focus();
-=======
-		feedback.innerHTML += '<button id="next">Next Question!</button>';
-=======
 		feedback.innerHTML += '<button id="next" class="button">Next Question!</button>';
->>>>>>> header-adjust
 		nextQuestion();
->>>>>>> master
 	} else {
 		currentScore -= 1;
 		score.innerHTML = currentScore;
 		emoji.innerHTML = '<img class="emoji" src="images/sad_emoji.png" alt="A sad emoji">';
 		feedback.innerHTML = '<span>Whoops! The correct answer to ' + topNum.innerText + symbol.innerHTML + bottomNum.innerText + ' is ' + correct +' . Keep going!</span>';
-<<<<<<< HEAD
-<<<<<<< HEAD
-		createCard();
-		answer.value = "";	
-		answer.focus();
-=======
-		feedback.innerHTML += '<button id="next">Next Question!</button>';
-=======
 		feedback.innerHTML += '<button id="next" class="button">Next Question!</button>';
->>>>>>> header-adjust
 		nextQuestion();
->>>>>>> master
 	}
 	
 }
