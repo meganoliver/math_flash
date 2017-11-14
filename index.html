@@ -26,13 +26,13 @@
 					<label for="subtraction">Subtraction</label>
 					<input class="radio" type="radio" id="subtraction" name="operation"><br>
 
-					<label for="multiply">Multiplication</label>
+					<label for="multiplication">Multiplication</label>
 					<input class="radio" type="radio" id="multiplication" name="operation"><br>
 
 					<label for="division">Division</label>
 					<input class="radio" type="radio" id="division" name="operation"><br>
 
-					<button type="button" id="form-submit">Let's Play!</button>
+					<button type="submit" id="form-submit">Let's Play!</button>
 				</fieldset>
 			</form>
 		</div>
@@ -43,7 +43,11 @@
 
 		<main>
 			<div class="main-divs" id="emoji"></div>
+<<<<<<< HEAD
 			<div id="main-card" class=" main-divs">
+=======
+		
+>>>>>>> master
 				<div class="top-card section">
 					<h1 id="top-number"></h1>
 				</div>
@@ -56,6 +60,22 @@
 					<button id="submit" type="submit">DONE!</button>
 				</div>
 			</div>
+			
+
+			
+			<div id="divide-card" class="divide-hide">
+				<div class="divide-sections">
+					<h1 id="dividend"></h1>
+					<h1 id="divide-symbol">➗</h1>
+					<h1 id="divisor"></h1>
+					<h1 id="equals">=</h1>
+					<input autofocus id="divide-answer" type="number">
+				</div>
+				<div class="divide-submit">
+					<button id="divide-submit" type="submit">DONE!</button>
+				</div>
+			</div>
+	
 			<div class="main-divs" id="feedback"></div>
 		</main>
 		<script type="text/javascript" src="./js/app.js" ></script>
