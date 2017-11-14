@@ -193,6 +193,14 @@ input[type="radio"] {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+<<<<<<< HEAD
+  height: 500px;
+  width: 300px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 50px auto 20px;
+  color: #000; }
+=======
   height: 300px;
   width: 520px;
   border: 1px solid #000;
@@ -202,11 +210,15 @@ input[type="radio"] {
   position: absolute;
   left: 29%;
   top: 25%; }
+>>>>>>> master
 
 .divide-sections {
   display: flex;
   flex-direction: row;
   align-items: center;
+<<<<<<< HEAD
+  justify-content: space-between; }
+=======
   justify-content: space-between;
   font-size: 3em;
   margin-top: 10px; }
@@ -216,6 +228,7 @@ input[type="radio"] {
   font-family: "Henny Penny", cursive;
   width: 120px;
   text-align: center; }
+>>>>>>> master
 
 #divide-submit {
   margin: 30px auto;
